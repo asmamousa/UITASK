@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="hotelReservation"
+            type="examples.android.example.com.yamsaferuitask.models.HotelReservationInfo" />
+    </data>
+
+    <android.support.constraint.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <TextView
+            android:id="@+id/reservationDate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@{hotelReservation.date}"
+            android:textColor="#1146FC"
+            android:textSize="17sp"
+            tools:text="Jul 17 - 22"
+            android:layout_marginStart="32dp"
+            app:layout_constraintEnd_toStartOf="@id/pen1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalDivider1" />
+
+        <ImageView
+            android:id="@+id/pen1"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/reservationDate"
+            app:layout_constraintTop_toBottomOf="@id/horizontalDivider1"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toStartOf="@+id/verticalDivider"
+            app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+        <TextView
+            android:id="@+id/countOfNights"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+             android:layout_marginTop="8dp"
+            tools:text="5 nights"
+            android:text="@{hotelReservation.numberOfNights}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/reservationDate"
+            app:layout_constraintEnd_toStartOf="@id/verticalDivider"
+
+
+            />
+
+
+        <TextView
+            android:id="@+id/countOfAdults"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+
+            tools:text="4 adults"
+            android:text="@{hotelReservation.numberOfAdults}"
+            android:textColor="#1146FC"
+            android:textSize="17sp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/verticalDivider"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalDivider1" />
+
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:layout_marginStart="12dp"
+            android:layout_marginTop="16dp"
+            app:layout_constraintStart_toEndOf="@+id/countOfAdults"
+            app:layout_constraintTop_toBottomOf="@+id/horizontalDivider1"
+            app:srcCompat="@drawable/ic_edit_black_24dp" />
+
+        <TextView
+            android:id="@+id/countOfRooms"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{hotelReservation.numberOfRooms}"
+            app:layout_constraintStart_toEndOf="@+id/verticalDivider"
+            app:layout_constraintTop_toBottomOf="@+id/countOfAdults"
+            android:layout_marginTop="8dp"
+           app:layout_constraintEnd_toEndOf="parent"
+            tools:text="4 rooms"/>
+
+
+        <View
+            android:id="@+id/horizontalDivider1"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_marginTop="20dp"
+            android:background="#DDDDDD"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/verticalDivider"
+            android:layout_width="1dp"
+            android:layout_height="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp"
+            android:background="#DDDDDD"
+
+            app:layout_constraintBottom_toTopOf="@+id/horizontalDivider2"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+                       app:layout_constraintTop_toBottomOf="@+id/horizontalDivider1"
+            app:layout_constraintVertical_bias="1.0" />
+
+        <View
+            android:id="@+id/horizontalDivider2"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="8dp"
+            android:background="#DDDDDD"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/countOfNights" />
+
+    </android.support.constraint.ConstraintLayout>
+
+</layout>
